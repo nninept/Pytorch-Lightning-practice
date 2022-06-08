@@ -1,0 +1,5 @@
+# Keep data folder
+data/*
+data/.gitignore
+
+lightning_logs/*
