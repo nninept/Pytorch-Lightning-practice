@@ -7,8 +7,8 @@ from torchvision import transforms
 import pytorch_lightning as pl
 from torchmetrics import Accuracy
 
-gpus = min(1, torch.cuda.device_count())
-# gpus = 0
+# gpus = min(1, torch.cuda.device_count())
+gpus = 0
 
 class MNISTModel(pl.LightningModule):
     def __init__(self, data_dir,batch_size):
