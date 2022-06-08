@@ -1,5 +1,3 @@
 # Keep data folder
 data/*
 !data/.gitkeep
-
-lightning_logs/*
