@@ -1,5 +1,5 @@
 # Keep data folder
 data/*
-data/.gitignore
+!data/.gitkeep
 
 lightning_logs/*
