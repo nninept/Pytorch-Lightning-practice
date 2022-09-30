@@ -1,7 +1,4 @@
 # Pytorch-Lightning-practice
-For OpenSource-Contribution-Academy
-
-본 Repo는 2022년 오픈소스 컨트리뷰톤의 Pytorch-Lightning 프로젝트 신청을 위하여 작성되었습니다.  
 
 ### Installation
 
