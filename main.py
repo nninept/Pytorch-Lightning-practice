@@ -11,7 +11,7 @@ import wandb
 from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning import Trainer
 
-wandb_logger = WandbLogger(project="KAU-Deeplearning-Lec")
+wandb_logger = WandbLogger(project="2019125061-Minsung-PytorchLightning-Cifar10")
 
 # gpus = min(1, torch.cuda.device_count())
 gpus = 0
@@ -74,7 +74,16 @@ class CIFARModel(pl.LightningModule):
 
     def test_step(self, batch, batch_idx):
         # Here we just reuse the validation_step for testing
-        return self.validation_step(batch, batch_idx)
+        x, y = batch
+        h = self(x)
+        loss = F.cross_entropy(h, y)
+        preds = torch.argmax(h, dim=1)
+        self.accuracy(preds, y)
+
+        # Calling self.log will surface up scalars for you in TensorBoard
+        self.log("test_loss", loss, prog_bar=True)
+        self.log("test_acc", self.accuracy, prog_bar=True)
+        return loss
 
     def setup(self, stage=None):
 

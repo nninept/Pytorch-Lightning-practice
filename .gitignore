@@ -3,4 +3,4 @@ data/*
 !data/.gitkeep
 wandb/*
 lightning_logs/*
-KAU-Deeplearning-Lec/*
+2019125061-Minsung-PytorchLightning-Cifar10/*
